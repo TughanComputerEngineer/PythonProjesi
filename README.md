@@ -131,6 +131,3 @@ data_stats.pkl: Veri istatistikleri
 
 X_test.pkl ve y_test.pkl: Test verileri
 
-Katkıda Bulunma
-Katkılarınız için fork işlemi yapıp pull request gönderebilirsiniz.
-
