@@ -1,3 +1,6 @@
+
+https://colab.research.google.com/drive/1kKgZ9_MdfNQnFyu382_AmzoIWynI4EKE?usp=sharing
+
 🏠 California Ev Fiyatı Tahmin Sistemi
 Bu proje, California'daki konut fiyatlarını tahmin etmek için gelişmiş bir derin öğrenme modeli ve kullanıcı dostu bir etkileşimli arayüz sunar.
 
