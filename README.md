@@ -1,21 +1,18 @@
-# PythonProjesi
-California Ev Fiyatı Tahmin Sistemi
+🏠 California Ev Fiyatı Tahmin Sistemi
 Bu proje, California'daki konut fiyatlarını tahmin etmek için gelişmiş bir derin öğrenme modeli ve kullanıcı dostu bir etkileşimli arayüz sunar.
 
-Özellikler
-🏠 California ev fiyat veri seti üzerinde eğitilmiş derin sinir ağı modeli
+📋 Özellikler
+🧠 Gelişmiş Derin Öğrenme Modeli: 5 katmanlı sinir ağı mimarisi
 
-📊 Gerçek zamanlı fiyat tahmini ve kira getirisi hesaplama
+📊 Etkileşimli Arayüz: Gerçek zamanlı fiyat tahmini ve analiz
 
-📈 Model performansını gösteren detaylı görselleştirmeler
+💰 Kira Getirisi Hesaplama: Yatırım değerlendirmesi için kira getirisi analizi
 
-🎛️ Özelleştirilebilir hiperparametreler
+📈 Görsel Karşılaştırmalar: Tahminlerin gerçek değerlerle karşılaştırılması
 
-🔄 Kolay yeniden eğitim ve model kaydetme özelliği
+⚙️ Merkezi Hiperparametre Yönetimi: Tüm ayarlar tek bir yerde
 
-📱 İnteraktif widget'larla kullanıcı dostu arayüz
-
-Kurulum
+🛠️ Kurulum
 Gerekli bağımlılıkları yükleyin:
 
 bash
@@ -24,61 +21,72 @@ Dosyayı çalıştırın:
 
 bash
 python colab_runner.py
-Kullanım Kılavuzu
-Model Eğitimi
+🚀 Kullanım
+Tam Sistem Çalıştırma
 python
-from colab_runner import quick_train
-
-# Modeli hızlıca eğitin
-metrics = quick_train()
-Tahmin Arayüzü
-python
-from colab_runner import quick_predict
-
-# Etkileşimli arayüzü başlatın
-quick_predict()
-Ana Sistem Çalıştırma
-python
-from colab_runner import run_complete_system
-
-# Tüm sistemi başlatın (eğitim + arayüz)
 run_complete_system()
-Etkileşimli Arayüz Özellikleri
-Özellik Ayarları:
+Bu komut:
 
-Medyan Gelir (MedInc)
+Gerekli paketleri kontrol eder
 
-Ev Yaşı (HouseAge)
+Model dosyalarının varlığını kontrol eder
 
-Ortalama Oda Sayısı (AveRooms)
+Gerekirse modeli eğitir
 
-Ortalama Yatak Odası (AveBedrms)
+Etkileşimli arayüzü başlatır
 
-Nüfus (Population)
+Hızlı Model Eğitimi
+python
+metrics = quick_train()
+Modeli hızlıca eğitir ve performans metriklerini döndürür.
 
-Ortalama İkamet Eden (AveOccup)
+Hızlı Tahmin Arayüzü
+python
+quick_predict()
+Önceden eğitilmiş modelle etkileşimli arayüzü başlatır.
 
-Enlem (Latitude)
+🧩 Arayüz Özellikleri
+Özellik Ayarları
+Medyan Gelir (MedInc): 0.1 - 15.0
 
-Boylam (Longitude)
+Ev Yaşı (HouseAge): 1.0 - 50.0 yıl
 
-Fonksiyon Butonları:
+Ort. Oda Sayısı (AveRooms): 1.0 - 10.0
 
+Ort. Yatak Odası (AveBedrms): 0.5 - 5.0
+
+Nüfus (Population): 100.0 - 10000.0
+
+Ort. İkamet Eden (AveOccup): 1.0 - 10.0
+
+Enlem (Latitude): 32.0 - 42.0
+
+Boylam (Longitude): -125.0 - -114.0
+
+Analiz Butonları
 🔮 Fiyat Tahmini Yap: Seçilen özelliklere göre ev fiyatı tahmini
 
 💰 Kira Getirisi Hesapla: Aylık kira geliri ve yıllık getiri oranı
 
 📊 Gerçek-Tahmin Karşılaştır: Model performansını gerçek verilerle karşılaştırma
 
-Filtreleme Seçenekleri:
+Filtreleme Seçenekleri
+Fiyat Aralığı: 50K - 1000K $
 
-Min/Maks Fiyat Aralığı
+Karşılaştırma Ev Sayısı: 1-20
 
-Karşılaştırma için örnek ev sayısı
+Kira Oranı: %30-%150
 
-Kira oranı yüzdesi
+Model Özellikleri
+Optimizer: Adam (Öğrenme Oranı: 0.0006)
 
-Model Performans Metrikleri
+Kayıp Fonksiyonu: MSE (Ortalama Karesel Hata)
+
+Regularizasyon: Dropout ve Batch Normalization
+
+Callback'ler: Erken Durdurma, Öğrenme Oranı Azaltma, Model Kaydetme
+
+📊 Performans Metrikleri
 Model değerlendirmesi aşağıdaki metriklerle yapılır:
 
 MSE (Mean Squared Error)
@@ -91,32 +99,7 @@ MAE (Mean Absolute Error)
 
 MAPE (Mean Absolute Percentage Error)
 
-Hiperparametre Yapılandırması
-Tüm hiperparametreler HYPERPARAMS sözlüğünde merkezi olarak yönetilir:
-
-python
-HYPERPARAMS = {
-    'HIDDEN_LAYERS': [256, 128, 64, 32, 16],
-    'DROPOUT_RATES': [0.3, 0.25, 0.2, 0.1, 0.0],
-    'EPOCHS': 600,
-    'BATCH_SIZE': 32,
-    'LEARNING_RATE': 0.0006,
-    # ... diğer parametreler
-}
-Görselleştirmeler
-Sistem aşağıdaki görselleştirmeleri sağlar:
-
-Eğitim ve doğrulama kaybı grafikleri
-
-Öğrenme oranı değişim grafiği
-
-Tahmini fiyat karşılaştırma çubuk grafikleri
-
-Kira getirisi ve aylık kira karşılaştırmaları
-
-Gerçek ve tahmini fiyatların karşılaştırılması
-
-Dosya Yapısı
+📂 Dosya Yapısı
 Eğitim sonrasında oluşturulan dosyalar:
 
 house_price_model.keras: Eğitilmiş model
@@ -126,6 +109,28 @@ scaler_X.pkl: Özellik scaler'ı
 scaler_y.pkl: Hedef değişken scaler'ı
 
 feature_names.pkl: Özellik isimleri
+
+data_stats.pkl: Veri istatistikleri
+
+X_test.pkl: Test özellikleri
+
+y_test.pkl: Test hedef değişkenleri
+
+original_y_test.pkl: Orijinal test hedef değişkenleri
+
+🌟 Örnek Çıktılar
+Fiyat Tahmini:
+
+🏠 Seçilen Ev Tahmini Fiyatı: $350,000
+📍 Konum: Enlem 34.0, Boylam -118.0
+🔻 Min Fiyat Filtresi: $100,000
+🔺 Maks Fiyat Filtresi: $400,000
+ℹ️ Grafikte 10 örnek ev ile karşılaştırma yapılmıştır
+Kira Getirisi:
+
+🏠 Ev Fiyatı: $350,000
+🏡 Aylık Kira: $2,450
+📈 Yıllık Getiri: %8.40
 
 data_stats.pkl: Veri istatistikleri
 
